@@ -1,0 +1,42 @@
+
+
+<html>
+<head>
+
+
+
+
+<script>
+function Myfunction(){
+	var tbl = document.getElementById('mtbl');
+	var a=document.getElementById("demo").value;
+        var n=Number(a);
+	if(n<=0 || n>9)
+	{
+		alert("输入数字必须为1-9");
+                return false;
+        }
+	for (var i=1;i<=n;i++){
+		var trEl = document.createElement("tr");
+		for(var j=1;j<=i;j++){
+	   var tdEl=document.createElement("td");
+           tdEl.innerHTML=" "+j+"x"+i+"="+j*i+" ";
+           trEl.appendChild(tdEl);
+		}
+		
+		tbl.appendChild(trEl);
+
+	}
+
+}
+</script>
+</head>
+
+<body onload="Myfunction">
+<h4>在文本框中输入数字绘制乘法表</h4>
+<input type="text" id="demo">
+<input type="button" value="确认" onclick="Myfunction()">
+<table id="mtbl">
+</table>
+</body>
+</html>
